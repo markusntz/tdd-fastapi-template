@@ -1,0 +1,29 @@
+version: '3.7'
+
+services: 
+  web: 
+    build: 
+      context: ./fastapi_tdd_docker
+      dockerfile: Dockerfile
+    command: uvicorn fastapi_tdd_docker.app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    volumes: 
+      - ./fastapi_tdd_docker:/usr/src/fastapi_tdd_docker
+    ports:
+      - 8002:8000
+    environment: 
+      - ENVIRONMENT=dev
+      - TESTING=0
+      - DATABASE_URL=postgres://postgres:postgres@web-db:5432/web_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@web-db:5432/web_test
+    depends_on: 
+      - web-db
+
+  web-db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    expose: 
+      - 5432
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
