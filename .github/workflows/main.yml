@@ -25,8 +25,8 @@ jobs:
           docker build \
             --cache-from ${{ env.IMAGE }}:latest \
             --tag ${{ env.IMAGE }}:latest \
-            --file ./project/Dockerfile.prod \
-            "./project"
+            --file ./fastapi_tdd_docker/Dockerfile.prod \
+            "./fastapi_tdd_docker"
       - name: Push image
         run: |
           docker push ${{ env.IMAGE }}:latest
