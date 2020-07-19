@@ -23,7 +23,7 @@ async def generate_schema() -> None:
 
     await Tortoise.init(
         db_url=os.environ.get("DATABASE_URL"),
-        modules={"models": ["fastapi_tdd_docker.app.models.tortoise"]},
+        modules={"models": ["models.tortoise"]},
     )
 
     log.info("Generating database schema via Tortoise")
