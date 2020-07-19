@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends
 
-from fastapi_tdd_docker.app.config import get_settings, Settings
-
+from fastapi_tdd_docker.app.config import Settings, get_settings
 
 router = APIRouter()
 

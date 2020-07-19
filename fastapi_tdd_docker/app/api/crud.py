@@ -1,11 +1,12 @@
-from typing import Text, Union, List
+from typing import List, Text, Union
 
 from fastapi_tdd_docker.app.models.pydantic import SummaryPayloadSchema
 from fastapi_tdd_docker.app.models.tortoise import TextSummary
+from fastapi_tdd_docker.app.summarizer import generate_summary
 
 
 async def post(payload: SummaryPayloadSchema) -> int:
-    summary = TextSummary(url=payload.url, summary="dummy summary")
+    summary = TextSummary(url=payload.url, summary="")
     await summary.save()
     return summary.id
 
