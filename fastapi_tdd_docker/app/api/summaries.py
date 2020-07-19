@@ -3,9 +3,11 @@ from typing import List
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Path
 
 from fastapi_tdd_docker.app.api import crud
-from fastapi_tdd_docker.app.models.pydantic import (SummaryPayloadSchema,
-                                                    SummaryResponseSchema,
-                                                    SummaryUpdatePayloadSchema)
+from fastapi_tdd_docker.app.models.pydantic import (
+    SummaryPayloadSchema,
+    SummaryResponseSchema,
+    SummaryUpdatePayloadSchema,
+)
 from fastapi_tdd_docker.app.models.tortoise import SummarySchema
 from fastapi_tdd_docker.app.summarizer import generate_summary
 
