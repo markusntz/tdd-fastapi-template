@@ -1,6 +1,6 @@
 aiosqlite==0.13.0
 appdirs==1.4.4
-asyncpg==0.20.1
+asyncpg==0.21.0
 atomicwrites==1.4.0; sys_platform == "win32"
 attrs==19.3.0
 beautifulsoup4==4.9.1
