@@ -11,7 +11,7 @@ click==7.1.2
 colorama==0.4.3
 coverage==5.1
 cssselect==1.1.0
-fastapi==0.58.1
+fastapi==0.65.2
 feedfinder2==0.0.4
 feedparser==5.2.1
 flake8==3.8.3
